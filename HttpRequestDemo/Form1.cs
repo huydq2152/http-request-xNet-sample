@@ -16,13 +16,13 @@ namespace HttpRequestDemo
             InitializeComponent();
         }
 
-        private void GetData(object sender, EventArgs e)
+        private void GetData_Click(object sender, EventArgs e)
         {
             var html = ActionHelper.GetData(Constants.KTeamHomeUrl);
             DisplayData(html);
         }
 
-        private void GetDataWithCookie(object sender, EventArgs e)
+        private void GetDataWithCookie_Click(object sender, EventArgs e)
         {
             var cookieStr = Constants.Cookie;
 
@@ -31,7 +31,7 @@ namespace HttpRequestDemo
         }
 
 
-        private void PostLogin(object sender, EventArgs e)
+        private void PostLogin_Click(object sender, EventArgs e)
         {
             var httpRequest = new HttpRequest();
             httpRequest.Cookies = new CookieDictionary();
@@ -63,9 +63,13 @@ namespace HttpRequestDemo
             return token;
         }
 
-        private void UploadFile(object sender, EventArgs e)
+        private void UploadFile_Click(object sender, EventArgs e)
         {
-
+            var dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ActionHelper.UploadFile(dialog.FileName);
+            }
         }
 
         private void DisplayData(string html)

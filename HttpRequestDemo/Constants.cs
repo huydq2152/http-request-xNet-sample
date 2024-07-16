@@ -10,5 +10,6 @@
         public static string RegexMatchRequestVerificationToken { get; set; } = @"(?<=__RequestVerificationToken"" type=""hidden"" value="").*?(?="")";
         public static string KTeamHomeUrl { get; set; } = "https://howkteam.vn/";
         public static string KTeamLoginUrl { get; set; } = "https://howkteam.vn/account/login?ReturnUrl=%2F";
+        public static string UploadFileUrl { get; set; } = "https://ufile.io/upload";
     }
 }
